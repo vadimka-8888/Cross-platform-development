@@ -2,11 +2,13 @@ import {MiniMaple} from "../src/miniMaple";
 
 document.addEventListener('DOMContentLoaded', setup)
 
-function setup() {
+function setup() 
+{
     document.getElementById('demoButton').onclick = addSomething;
 }
 
-function addSomething(){
+function addSomething()
+{
     const someDummyDiv = document.createElement('div');
     someDummyDiv.classList.add('generated');
     const count = document.getElementsByClassName('generated').length;
@@ -16,14 +18,14 @@ function addSomething(){
 }
 
 const button = document.getElementById('diffButton')
-button.addEventListener('click', differentiate)
+button.onclick = differentiate
 
 function differentiate()
 {
     const input = document.getElementById('input')
     const output = document.getElementById('output')
-    const diff = MiniMaple()
+    const diff = new MiniMaple()
     const text = input.value
-    const answer = diff.func(text)
+    const answer = diff.differentiate(text)
     output.textContent = answer
 }
